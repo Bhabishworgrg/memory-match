@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhnhf1a8t1kpl"]
+
+[ext_resource type="Script" path="res://scripts/Game.cs" id="1_hjil4"]
+[ext_resource type="PackedScene" uid="uid://dbbxkowef8dqd" path="res://scenes/card.tscn" id="2_cf0hf"]
+
+[node name="Game" type="CanvasLayer" node_paths=PackedStringArray("_gridContainer", "_card")]
+script = ExtResource("1_hjil4")
+_gridContainer = NodePath("GridContainer")
+_card = NodePath("Card")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Card" parent="." node_paths=PackedStringArray("_gridContainer") instance=ExtResource("2_cf0hf")]
+offset_left = -1493.0
+offset_top = 2233.0
+offset_right = -743.0
+offset_bottom = 3283.0
+_gridContainer = NodePath("../GridContainer")

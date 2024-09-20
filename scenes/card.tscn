@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbbxkowef8dqd"]
+
+[ext_resource type="Texture2D" uid="uid://r5vwc5mfanb" path="res://assets/CardBack.png" id="1_1t8br"]
+[ext_resource type="Script" path="res://scripts/Card.cs" id="2_oisyy"]
+
+[node name="Card" type="TextureButton" node_paths=PackedStringArray("_timer")]
+offset_right = 750.0
+offset_bottom = 1050.0
+texture_normal = ExtResource("1_1t8br")
+script = ExtResource("2_oisyy")
+_cardBack = ExtResource("1_1t8br")
+_timer = NodePath("Timer")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="pressed" from="." to="." method="OnClicked"]
+[connection signal="timeout" from="Timer" to="." method="OnTimerTimeout"]

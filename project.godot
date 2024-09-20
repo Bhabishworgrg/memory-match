@@ -1,0 +1,29 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Memory Match"
+run/main_scene="res://scenes/game.tscn"
+config/features=PackedStringArray("4.3", "C#", "Forward Plus")
+
+[autoload]
+
+GameManager="*res://scripts/GameManager.cs"
+
+[display]
+
+window/size/viewport_width=8000
+window/size/viewport_height=6000
+window/stretch/mode="viewport"
+
+[dotnet]
+
+project/assembly_name="Memory Match"
