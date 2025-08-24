@@ -16,6 +16,8 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/h_separation = 270
+theme_override_constants/v_separation = 250
 
 [node name="Card" parent="." node_paths=PackedStringArray("_gridContainer") instance=ExtResource("2_cf0hf")]
 offset_left = -1493.0
