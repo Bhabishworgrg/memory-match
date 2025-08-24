@@ -20,8 +20,9 @@ GameManager="*res://scripts/GameManager.cs"
 
 [display]
 
-window/size/viewport_width=8000
-window/size/viewport_height=6000
+window/size/viewport_width=15488
+window/size/viewport_height=8712
+window/size/mode=3
 window/stretch/mode="viewport"
 
 [dotnet]
