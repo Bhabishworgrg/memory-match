@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Memory Match"
 run/main_scene="res://src/game/game.tscn"
-config/features=PackedStringArray("4.3", "Forward Plus")
+config/features=PackedStringArray("4.3", "C#", "Forward Plus")
 
 [autoload]
 
@@ -24,7 +24,12 @@ window/size/viewport_width=15488
 window/size/viewport_height=8712
 window/size/mode=3
 window/stretch/mode="viewport"
+window/stretch/aspect="expand"
 
 [dotnet]
 
 project/assembly_name="Memory Match"
+
+[rendering]
+
+environment/defaults/default_clear_color=Color(0.180392, 0.25098, 0.341176, 1)
