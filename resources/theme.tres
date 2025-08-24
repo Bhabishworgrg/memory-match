@@ -1,0 +1,12 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://b0717evvpdaen"]
+
+[ext_resource type="Texture2D" uid="uid://4oju7tynilob" path="res://resources/up_down.png" id="1_miqhj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i3rp3"]
+
+[resource]
+default_font_size = 700
+Button/constants/outline_size = 500
+Button/styles/normal = SubResource("StyleBoxEmpty_i3rp3")
+Label/constants/outline_size = 500
+SpinBox/icons/updown = ExtResource("1_miqhj")

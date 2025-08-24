@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dbbxkowef8dqd"]
 
-[ext_resource type="Texture2D" uid="uid://d3kre42jq0r46" path="res://assets/CardBack.png" id="1_1t8br"]
+[ext_resource type="Texture2D" uid="uid://d3kre42jq0r46" path="res://assets/card_back.png" id="1_1t8br"]
 [ext_resource type="Script" path="res://src/card/Card.cs" id="2_oisyy"]
 
 [node name="Card" type="TextureButton" node_paths=PackedStringArray("_timer")]
