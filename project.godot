@@ -11,12 +11,12 @@ config_version=5
 [application]
 
 config/name="Memory Match"
-run/main_scene="res://scenes/game.tscn"
-config/features=PackedStringArray("4.3", "C#", "Forward Plus")
+run/main_scene="res://src/game/game.tscn"
+config/features=PackedStringArray("4.3", "Forward Plus")
 
 [autoload]
 
-GameManager="*res://scripts/GameManager.cs"
+GameManager="*res://src/autoload/GameManager.cs"
 
 [display]
 

@@ -16,7 +16,7 @@ public partial class GameManager : Node
 		// Set current instance as the only instance of the GameManager
 		Instance = this;
 		
-		Difficulty = 4;
+		Difficulty = 6;
 		CardsNum = Difficulty * Difficulty;
 	}
 }
