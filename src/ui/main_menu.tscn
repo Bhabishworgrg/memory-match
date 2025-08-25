@@ -1,16 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://ckxv5ulb27d1t"]
+[gd_scene load_steps=3 format=3 uid="uid://ckxv5ulb27d1t"]
 
+[ext_resource type="Script" path="res://src/ui/MainMenu.cs" id="1_qxg6a"]
 [ext_resource type="Theme" uid="uid://b0717evvpdaen" path="res://resources/theme.tres" id="1_yiari"]
 
-[node name="MainMenu" type="Control"]
+[node name="MainMenu" type="Control" node_paths=PackedStringArray("_gridSizeSpinBox")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_qxg6a")
+_gridSizeSpinBox = NodePath("VBoxContainer/HBoxContainer/GridSizeSpinBox")
 
-[node name="Exit" type="Button" parent="."]
+[node name="ExitButton" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -20,6 +23,7 @@ offset_top = 500.0
 offset_right = -800.0
 offset_bottom = 1463.0
 grow_horizontal = 0
+mouse_default_cursor_shape = 2
 theme = ExtResource("1_yiari")
 text = "x"
 
@@ -47,8 +51,9 @@ layout_mode = 2
 theme = ExtResource("1_yiari")
 text = "GRID SIZE"
 
-[node name="GridSize" type="SpinBox" parent="VBoxContainer/HBoxContainer"]
+[node name="GridSizeSpinBox" type="SpinBox" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 theme = ExtResource("1_yiari")
 min_value = 2.0
 max_value = 6.0
@@ -56,7 +61,11 @@ value = 6.0
 alignment = 1
 update_on_text_changed = true
 
-[node name="Button" type="Button" parent="VBoxContainer"]
+[node name="PlayButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 theme = ExtResource("1_yiari")
 text = "PLAY"
+
+[connection signal="pressed" from="ExitButton" to="." method="OnExitButtonPressed"]
+[connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="OnPlayButtonPressed"]
