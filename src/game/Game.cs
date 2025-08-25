@@ -12,8 +12,8 @@ public partial class Game : CanvasLayer
 	public override void _Ready()
 	{
 		GameManager gameManager = GameManager.Instance;
-		int difficulty = gameManager.Difficulty;
-		_gridContainer.Columns = difficulty;
+
+		_gridContainer.Columns = gameManager.GridSize;
 		
 		int cardNum = gameManager.CardsNum;
 		for (int i = 0; i < cardNum ; i++)
@@ -41,7 +41,7 @@ public partial class Game : CanvasLayer
 			int i = 0;
 			foreach (int position in randomPositions)
 			{
-				Card card = (Card) GetChild(0).GetChild(position);
+				Card card = (Card) _gridContainer.GetChild(position);
 				card.CardReveal = (Texture2D) GD.Load("res://assets/cards/" + num + ".png");
 
 				randomPositions.Remove(position);
@@ -53,5 +53,10 @@ public partial class Game : CanvasLayer
 				}
 			}
         }
+	}
+
+	private void OnExitButtonPressed()
+	{
+		GetTree().ChangeSceneToFile("res://src/ui/main_menu.tscn");
 	}
 }

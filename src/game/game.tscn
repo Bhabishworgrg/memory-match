@@ -1,12 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://bhnhf1a8t1kpl"]
+[gd_scene load_steps=4 format=3 uid="uid://bhnhf1a8t1kpl"]
 
 [ext_resource type="Script" path="res://src/game/Game.cs" id="1_m17uk"]
 [ext_resource type="PackedScene" uid="uid://dbbxkowef8dqd" path="res://src/card/card.tscn" id="2_lk2q5"]
+[ext_resource type="Theme" uid="uid://b0717evvpdaen" path="res://resources/theme.tres" id="2_x212x"]
 
 [node name="Game" type="CanvasLayer" node_paths=PackedStringArray("_gridContainer", "_card")]
 script = ExtResource("1_m17uk")
 _gridContainer = NodePath("GridContainer")
 _card = NodePath("Card")
+
+[node name="ExitButton" type="Button" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1194.0
+offset_top = 500.0
+offset_right = -800.0
+offset_bottom = 1463.0
+grow_horizontal = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("2_x212x")
+text = "x"
 
 [node name="GridContainer" type="GridContainer" parent="."]
 anchors_preset = 8
@@ -25,3 +39,5 @@ offset_top = 2233.0
 offset_right = -743.0
 offset_bottom = 3283.0
 _gridContainer = NodePath("../GridContainer")
+
+[connection signal="pressed" from="ExitButton" to="." method="OnExitButtonPressed"]

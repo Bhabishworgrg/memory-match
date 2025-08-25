@@ -7,7 +7,7 @@ public partial class GameManager : Node
 	// One and only instance of GameManager
 	public static GameManager Instance { get; private set; }
 
-	public int Difficulty { get; set; }
+	public int GridSize { get; set; }
 	public int CardsNum { get; set; }
 	public Card FirstCard { get; set; }
 
@@ -16,7 +16,6 @@ public partial class GameManager : Node
 		// Set current instance as the only instance of the GameManager
 		Instance = this;
 		
-		Difficulty = 6;
-		CardsNum = Difficulty * Difficulty;
+		CardsNum = GridSize * GridSize;
 	}
 }
