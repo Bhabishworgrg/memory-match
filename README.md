@@ -2,7 +2,7 @@
 A simple card memory game built with Godot 4 and C#. Flip two cards at a time to find matching pairs. If the cards match, they disappear. The game continues until all pairs are found.
 <br></br>
 
-![Preview](docs/preview.gif)
+![Preview](docs/preview.gif?v=3)
 
 ---
 
