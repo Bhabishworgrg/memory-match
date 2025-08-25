@@ -2,22 +2,21 @@ using Godot;
 using System;
 using System.Collections.Generic;
 
-public partial class Game : CanvasLayer
-{
-	[Export] private GridContainer _gridContainer;
-	[Export] private TextureButton _card;
+public partial class Game : CanvasLayer {
+	[Export] 
+	private GridContainer _gridContainer;
+	[Export] 
+	private TextureButton _card;
 
 	public Texture2D Image { get; private set; }
 	
-	public override void _Ready()
-	{
+	public override void _Ready() {
 		GameManager gameManager = GameManager.Instance;
 
 		_gridContainer.Columns = gameManager.GridSize;
 		
 		int cardNum = gameManager.CardsNum;
-		for (int i = 0; i < cardNum ; i++)
-		{
+		for (int i = 0; i < cardNum ; i++) {
             _gridContainer.AddChild(_card.Duplicate());
 		}
 
@@ -25,38 +24,32 @@ public partial class Game : CanvasLayer
         HashSet<int> randomCards = new HashSet<int>();
 		HashSet<int> randomPositions = new HashSet<int>();
 
-        while (randomCards.Count < cardNum / 2)
-        {
+        while (randomCards.Count < cardNum / 2) {
             randomCards.Add(random.Next(20));
 		}
 
-		while (randomPositions.Count < cardNum)
-		{
+		while (randomPositions.Count < cardNum) {
 			randomPositions.Add(random.Next(cardNum));
 		}
 
 
-        foreach (int num in randomCards)
-        {
+        foreach (int num in randomCards) {
 			int i = 0;
-			foreach (int position in randomPositions)
-			{
+			foreach (int position in randomPositions) {
 				Card card = (Card) _gridContainer.GetChild(position);
 				card.CardReveal = (Texture2D) GD.Load("res://assets/cards/" + num + ".png");
 
 				randomPositions.Remove(position);
 				i++;
 
-				if (i == 2)
-				{
+				if (i == 2) {
 					break;
 				}
 			}
         }
 	}
 
-	private void OnExitButtonPressed()
-	{
+	private void OnExitButtonPressed() {
 		GetTree().ChangeSceneToFile("res://src/ui/main_menu.tscn");
 	}
 }

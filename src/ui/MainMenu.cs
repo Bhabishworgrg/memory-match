@@ -1,24 +1,20 @@
 using Godot;
 
-public partial class MainMenu : Control
-{
+public partial class MainMenu : Control {
 	[Export]
 	private SpinBox _gridSizeSpinBox;
 
 	private GameManager gameManager;
 
-	public override void _Ready()
-	{
+	public override void _Ready() {
 		gameManager = GameManager.Instance;
 	}
 
-	private void OnExitButtonPressed()
-	{
+	private void OnExitButtonPressed() {
 		GetTree().Quit();
 	}
 
-	private void OnPlayButtonPressed()
-	{
+	private void OnPlayButtonPressed() {
 		int gridSize = (int) _gridSizeSpinBox.Value;
 		gameManager.GridSize = gridSize;
 		gameManager.CardsNum = gridSize * gridSize;
