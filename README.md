@@ -27,10 +27,10 @@ A simple card memory game built with Godot 4 and C#. Flip two cards at a time to
 ---
 
 # Releases
-You can download the latest release of the game from the Releases section of the repository.
+You can download the latest release of the game from the [Releases](https://github.com/Bhabishworgrg/memory-match/releases).
 
 # Build from Source
-If you prefer building the game from source, you can find the instructions at [BUILDING.md](BUILDING.md).
+If you prefer building the game from source, you can find the instructions at [BUILDING.md](docs/BUILDING.md).
 
 ---
 
