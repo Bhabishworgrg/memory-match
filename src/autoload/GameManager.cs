@@ -16,6 +16,7 @@ public partial class GameManager : Node
 		// Set current instance as the only instance of the GameManager
 		Instance = this;
 		
-		CardsNum = GridSize * GridSize;
+		GridSize = 6;
+		CardsNum = 36;
 	}
 }
