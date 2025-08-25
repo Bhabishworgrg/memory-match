@@ -3,6 +3,9 @@
 /android/
 *.import
 
+# Exported binaries
+exports
+
 # .NET specific ignores
 *.csproj
 *.sln
