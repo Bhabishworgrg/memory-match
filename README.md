@@ -1,10 +1,8 @@
 <h1 align="center">Memory Match</h1>
-<p align="center">
-    A simple card memory game built with Godot 4 and C#.
-</p>
-Flip two cards at a time to find matching pairs. If the cards match, they disappear. The game continues until all pairs are found.
+A simple card memory game built with Godot 4 and C#. Flip two cards at a time to find matching pairs. If the cards match, they disappear. The game continues until all pairs are found.
+<br></br>
 
-[Preview](docs/preview.gif)
+![Preview](docs/preview.gif)
 
 ---
 
