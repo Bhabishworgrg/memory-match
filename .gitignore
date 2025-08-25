@@ -6,3 +6,6 @@
 # .NET specific ignores
 *.csproj
 *.sln
+
+# Kitty session files
+session.kitty
