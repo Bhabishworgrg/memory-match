@@ -18,9 +18,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         
-      - name: Install .NET SDK
+      - name: Install .NET 6 SDK
         run: |
-          apt-get install -y dotnet-sdk-8.0
+          wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
+          bash dotnet-install.sh --version 6.0 --install-dir $HOME/.dotnet
+          export PATH=$HOME/.dotnet:$PATH
+          mkdir -p /usr/share/dotnet
+          ln -s $HOME/.dotnet /usr/share/dotnet
 
       - name: Setup
         run: |
