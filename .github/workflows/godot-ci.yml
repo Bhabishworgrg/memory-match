@@ -51,6 +51,12 @@ jobs:
         with:
           tag_name: ${{ github.ref_name }}
           name: "Memory Match ${{ github.ref_name }}"
+          body: |
+            ⚠️ Important: This version is not code-signed, so Windows and macOS might flag it as unsafe or as a potential virus.
+            If you see a warning, please choose to run the application anyway.
+            > This is normal for unsigned executables. The game is safe to run.
+
+            For system architectures other than x86_64, please build it yourself following the instructions in [BUILDING.md](docs/BUILDING.md).
           draft: false
           prerelease: false
           files: |
