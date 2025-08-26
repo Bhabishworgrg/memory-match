@@ -11,7 +11,7 @@ env:
 
 jobs:
   export:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     container:
       image: barichello/godot-ci:mono-4.3
     steps:
