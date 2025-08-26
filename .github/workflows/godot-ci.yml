@@ -18,6 +18,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         
+      - name: Install .NET SDK
+        run: |
+          wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
+          bash dotnet-install.sh --version 8.0 --install-dir $HOME/.dotnet
+          export PATH=$HOME/.dotnet:$PATH
+
       - name: Setup
         run: |
           mkdir -v -p ~/.local/share/godot/export_templates/
