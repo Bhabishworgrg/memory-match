@@ -18,14 +18,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         
-      - name: Install .NET 6 SDK
-        run: |
-          wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
-          bash dotnet-install.sh --version 6.0 --install-dir $HOME/.dotnet
-          export PATH=$HOME/.dotnet:$PATH
-          mkdir -p /usr/share/dotnet
-          ln -s $HOME/.dotnet /usr/share/dotnet
-
       - name: Setup
         run: |
           mkdir -v -p ~/.local/share/godot/export_templates/
@@ -38,38 +30,30 @@ jobs:
           mkdir -v -p build/windows
           EXPORT_DIR="$(readlink -f build)"
           cd $PROJECT_PATH
-          godot --headless --verbose --export-release "Windows Desktop" "$EXPORT_DIR/windows/$EXPORT_NAME.exe"
+          godot --headless --verbose --export-release "Windows x86_64" "$EXPORT_DIR/windows/$EXPORT_NAME.exe"
       
       - name: Linux Build
         run: |
           mkdir -v -p build/linux
           EXPORT_DIR="$(readlink -f build)"
           cd $PROJECT_PATH
-          godot --headless --verbose --export-release "Linux/X11" "$EXPORT_DIR/linux/$EXPORT_NAME.x86_64"
+          godot --headless --verbose --export-release "Linux x86_64" "$EXPORT_DIR/linux/$EXPORT_NAME.x86_64"
 
-      - name: Mac Build
-        run: |
-          mkdir -v -p build/mac
-          EXPORT_DIR="$(readlink -f build)"
-          cd $PROJECT_PATH
-          godot --headless --verbose --export-release "macOS" "$EXPORT_DIR/mac/$EXPORT_NAME.zip"
-      
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ github.ref_name }}
           name: "Memory Match ${{ github.ref_name }}"
           body: |
-            ⚠️ Important: This version is not code-signed, so Windows and macOS might flag it as unsafe or as a potential virus.
+            ⚠️ Important: This version is not code-signed, so Windows might flag it as unsafe or as a potential virus.
             If you see a warning, please choose to run the application anyway.
             > This is normal for unsigned executables. The game is safe to run.
 
-            For system architectures other than x86_64, please build it yourself following the instructions in [BUILDING.md](docs/BUILDING.md).
+            For x86_32 architecture, please build it yourself following the instructions in [BUILDING.md](docs/BUILDING.md).
           draft: false
           prerelease: false
           files: |
             build/windows/memory-match.exe
             build/linux/memory-match.x86_64
-            build/mac/memory-match.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
