@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ckxv5ulb27d1t"]
 
-[ext_resource type="Script" path="res://src/ui/MainMenu.cs" id="1_qxg6a"]
+[ext_resource type="Script" uid="uid://cqifvmkaw4m4m" path="res://src/ui/MainMenu.cs" id="1_qxg6a"]
 [ext_resource type="Theme" uid="uid://b0717evvpdaen" path="res://resources/theme.tres" id="1_yiari"]
 
 [node name="MainMenu" type="Control" node_paths=PackedStringArray("_gridSizeSpinBox")]
