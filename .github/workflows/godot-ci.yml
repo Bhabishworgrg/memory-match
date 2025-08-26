@@ -20,9 +20,7 @@ jobs:
         
       - name: Install .NET SDK
         run: |
-          wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
-          bash dotnet-install.sh --version 8.0 --install-dir $HOME/.dotnet
-          export PATH=$HOME/.dotnet:$PATH
+          sudo apt-get install -y dotnet-sdk-8.0
 
       - name: Setup
         run: |
