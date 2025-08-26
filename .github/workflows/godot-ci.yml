@@ -56,4 +56,4 @@ jobs:
             build/windows/memory-match.exe
             build/linux/memory-match.x86_64
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.RELEASE_ACCESS_TOKEN }}
