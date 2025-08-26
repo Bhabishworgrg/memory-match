@@ -11,7 +11,7 @@ env:
 
 jobs:
   export:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     container:
       image: barichello/godot-ci:mono-4.3
     steps:
@@ -20,7 +20,6 @@ jobs:
         
       - name: Install .NET SDK
         run: |
-          apt-get update
           apt-get install -y dotnet-sdk-8.0
 
       - name: Setup
