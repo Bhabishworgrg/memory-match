@@ -6,9 +6,5 @@
 # Exported binaries
 exports
 
-# .NET specific ignores
-*.csproj
-*.sln
-
 # Kitty session files
 session.kitty
